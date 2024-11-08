@@ -1,0 +1,11 @@
+footer nav a {
+    text-decoration: none;
+}
+
+footer .social-link {
+    background-color: none;
+
+    &:hover {
+        background-color: $primary;
+    }
+}

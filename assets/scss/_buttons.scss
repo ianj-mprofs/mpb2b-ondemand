@@ -1,0 +1,51 @@
+.btn-sm {
+    font-weight: $font-weight-normal;
+    letter-spacing: $tracking-wider;
+}
+
+.btn-register {
+    position: relative;
+    &::after {
+        content: "\F135";
+        font-family: bootstrap-icons;
+        margin-left: 0.25em;
+        position: relative;
+        top: 2px;
+    }
+
+    &:hover {
+        &::after {
+            content: "\F138";
+            transition: all .3s ease;
+        }
+    }
+}
+
+.btn-play {
+    position: relative;
+    &::after {
+        content: "\F4F3";
+        font-family: bootstrap-icons;
+        margin-left: 0.25em;
+        position: relative;
+        top: 2px;
+    }
+
+    &:hover {
+        &::after {
+            content: "\F4F2";
+            transition: all .3s ease;
+        }
+    }
+}
+
+.btn-calendar {
+    position: relative;
+    &::after {
+        content: "\F1E2";
+        font-family: bootstrap-icons;
+        margin-left: 0.25em;
+        position: relative;
+        top: 2px;
+    }
+}

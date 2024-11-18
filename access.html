@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="/events/mpb2b24/css/custom.css" id="style">
+    <link rel="stylesheet" href="" id="style">
 
     <!-- Scripts -->
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e5269c15-96e2-4904-9ea7-32f93574fb7b"
@@ -65,16 +65,43 @@
 
         <!--body content-->
         <main class="w-100 h-100">
+            <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle">
+
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <div style="padding:56.25% 0 0 0;position:relative;">
+                                    <iframe id="modalIFrame" src="" frameborder="0"
+                                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="">
+                                    </iframe>
+                                </div>
+                                <script src="https://player.vimeo.com/api/player.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Hero Section -->
-            <section class="container-fluid bg-secondary hero" id="">
+            <section class="container-fluid bg-secondary hero">
                 <div class="container-xl">
                     <div class="row py-5 flex-column flex-md-row justify-content-between align-items-center">
                         <div class="col-12 mb-5 mb-lg-0 text-white">
                             <h1 class="display-4">
-                                2025 B2B Forum
-                                <br>
-                                On Demand Library
+                                MarketingProfs B2B Forum 2024 On Demand
                             </h1>
+                            <p class="fw-bold fst-italic fs-4 mb-3">
+                                2024 Conference Session Recordings
+                            </p>
+                            <p class=" fst-italic mb-0">
+                                Available through March 31, 2025
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -85,27 +112,9 @@
             <!-- Sessions -->
             <section class="container-fluid">
                 <div class="container-xl">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 py-5 justify-content-center justify-content-lg-between"
+                    <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 py-5 justify-content-center justify-content-lg-between"
                         id="sessions-wrapper">
-                        <div class="col">
-                            <div class="card">
-                                <div class="row g-0">
-                                    <div class="col-3 col-md-12">
-                                        <img src="..." class="img-fluid rounded-start" alt="...">
-                                    </div>
-                                    <div class="col-9 col-md-12">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit
-                                                longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </section>
@@ -218,7 +227,14 @@
         crossorigin="anonymous"></script>
 
     <!-- Custom Scripts -->
+
     <script>
+        // Keep css updated
+        $(document).ready(function () {
+            var timeStamp = new Date().getTime();
+            $("#style").attr("href", "/events/mpb2b24/css/ondemand.css?" + timeStamp);
+        });
+
         // Checks if user is logged in
         $(document).ready(function () {
             if ($('#mpuserid').val() == "0") {
@@ -234,6 +250,90 @@
                     $(".registered").hide();
                 }
             }
+        });
+    </script>
+    <script>
+        const sessions = [
+            {
+                sessionTitle: 'Test Title #1',
+                sessionTopic: 'Test Topic #1',
+                speakerName: 'John Doe',
+                imgLink: 'placeholder-image.jpg',
+                slideLink: 'marketingprofs.com',
+                videoLink: 'https://player.vimeo.com/video/1008707727?h=fddaf06f69&badge=0&autopause=0&player_id=0&app_id=58479',
+                videoTitle: 'Video Test Title'
+            },
+            {
+                sessionTitle: 'Test Title #2',
+                sessionTopic: 'Test Topic #2',
+                speakerName: 'Jane Doe',
+                imgLink: 'placeholder-image.jpg',
+                slideLink: 'marketingprofs.com',
+                videoLink: 'https://player.vimeo.com/video/1008707727?h=fddaf06f69&badge=0&autopause=0&player_id=0&app_id=58479',
+                videoTitle: 'Video Test Title'
+            },
+            {
+                sessionTitle: 'Test Title #3',
+                sessionTopic: 'Test Topic #3',
+                speakerName: 'Lame Doe',
+                imgLink: 'placeholder-image.jpg',
+                slideLink: 'marketingprofs.com',
+                videoLink: 'https://player.vimeo.com/video/1008707727?h=fddaf06f69&badge=0&autopause=0&player_id=0&app_id=58479',
+                videoTitle: 'Video Test Title'
+            },
+            {
+                sessionTitle: 'Test Title #4',
+                sessionTopic: 'Test Topic #4',
+                speakerName: 'Lame Doe',
+                imgLink: 'placeholder-image.jpg',
+                slideLink: 'marketingprofs.com',
+                videoLink: 'https://player.vimeo.com/video/1008707727?h=fddaf06f69&badge=0&autopause=0&player_id=0&app_id=58479',
+                videoTitle: 'Video Test Title'
+            },
+        ];
+
+        $('#modal').on('show.bs.modal', function (e) {
+
+            //get data-id attribute of the clicked element
+            var videoLink = $(e.relatedTarget).data('video-link');
+            var videoTitle = $(e.relatedTarget).data('video-title');
+
+            //populate the textbox
+            $(e.currentTarget).find('input[name="bookId"]').val(bookId);
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let counter = 0;
+            const sessionsEl = document.getElementById('sessions-wrapper');
+            sessions.forEach((session) => {
+
+                const newCol = document.createElement("div");
+                newCol.classList.add('col');
+                newCol.innerHTML += `<div class="card">
+                                        <button type="button" data-video-link="${session.videoLink}" data-video-title="${session.videoTitle}" data-bs-toggle="modal" data-bs-target="#modal">
+                                            <div class="row g-0">
+                                                <div class="col-3 col-md-12">
+                                                    <img src="/events/mpb2b24/images/thumbnails/${session.imgLink}" class="w-100 rounded-start" alt="...">
+                                                </div>
+                                                <div class="col-9 col-md-12">
+                                                    <div class="card-body">
+                                                        <p class="prehead">${session.sessionTopic}</p>
+                                                        <h4 class="card-title">${session.sessionTitle}</h4>
+                                                        <p class="card-text">${session.speakerName}</p>
+                                                        <small>
+                                                            <a href="${session.slideLink}" class="card-link">Download Slides</a>
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>`
+
+
+                sessionsEl.appendChild(newCol);
+                counter++;
+            });
         });
     </script>
 </body>
